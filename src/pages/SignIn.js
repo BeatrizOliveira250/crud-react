@@ -1,8 +1,6 @@
 
 import React, { useState, useContext} from 'react';
 import { authContext } from '../contexts/AuthContext';
-import { Form, Button } from 'react-bootstrap';
-
 
 const SignIn = ({history}) => {
   const [email, setEmail] = useState();
@@ -16,41 +14,36 @@ const SignIn = ({history}) => {
   };
   return (
     <div
-      style={{ height: "100vh" }}
-      className="d-flex justify-content-center align-items-center"
+      className="content"
     >
-      <div style={{ width: 300 }}>
+      <div >
         <h1 className="text-center">Sign in</h1>
-        <Form onSubmit={onFormSubmit}>
-          <Form.Group>
-            <Form.Label>Email address</Form.Label>
-            <Form.Control
+        <form onSubmit={onFormSubmit}>
+          <div className="group" >
+            <label>Email address</label>
+            <div className="control"
               type="email"
               placeholder="Enter email"
               onChange={e => {
                 setEmail(e.target.value);
               }}
             />
-          </Form.Group>
+          </div>
 
-          <Form.Group>
-            <Form.Label>Password</Form.Label>
-            <Form.Control
+          <div className="group">
+            <label>Password</label>
+            <div className="control"
               type="password"
               placeholder="Password"
               onChange={e => {
                 setPassword(e.target.value);
               }}
             />
-          </Form.Group>
-          <Button
-            variant="primary"
-            type="submit"
-            className="w-100 mt-3"
-          >
+          </div>
+          <button>
             Sign in
-          </Button>
-        </Form>
+          </button>
+        </form>
       </div>
     </div>
   );
