@@ -1,15 +1,17 @@
+
 import React, { useState} from 'react';
+import { authContext } from '../contexts/AuthContext';
 import { Form, Button } from 'react-bootstrap';
 
-const SignIn = () => {
+const SignIn = ({history}) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const { setAuthData } = useContext(authContext);
 
   const onFormSubmit = e => {
     e.preventDefault();
-    console.log(email);
-    console.log(password);
-    // we will change it later;
+    setAuthData(email);
+    history.replace('/');
   };
   return (
     <div
