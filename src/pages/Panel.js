@@ -9,14 +9,11 @@ const Panel = () => {
   }
   return (
     <div
-      className="d-flex justify-content-center align-items-center"
-    >
-      <div className="button">
-        <h1 className="text-center"> {`Olá, ${auth.data}`} </h1>
+      className="content">
+        <h1> {`Olá, ${auth.data}`} </h1>
         <button onClick={onLogOut}>
           Log out
         </button>
-      </div>
     </div>
   );
 };
